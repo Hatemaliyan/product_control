@@ -13,15 +13,15 @@ function add_product {
     read -p "Enter the price: " price
 
     if grep -q "^$product_name," "$INVENTORY_FILE"; then
-        sed -i "s/^$product_name,.*/$product_name,$sku,$((quantity+$(grep "^$product_name," "$INVENTORY_FILE" | cut -d',' -f3)),$price)/" "$INVENTORY_FILE"
-        echo "Product updated: $product_name, $sku, $((quantity+$(grep "^$product_name," "$INVENTORY_FILE" | cut -d',' -f3))), $price"
+        sed -i "s/^$product_name,.*/$product_name,$((quantity+$(grep "^$product_name," "$INVENTORY_FILE" | cut -d',' -f3)),$price)/" "$INVENTORY_FILE"
+        echo "Product updated: $product_name, $((quantity+$(grep "^$product_name," "$INVENTORY_FILE" | cut -d',' -f3))), $price"
     else
-        echo "$product_name,$sku,$quantity,$price" >> "$INVENTORY_FILE"
-        echo "Product added: $product_name, $sku, $quantity, $price"
+        echo "$product_name,$quantity,$price" >> "$INVENTORY_FILE"
+        echo "Product added: $product_name, $quantity, $price"
     fi
 
     # Log the operation
-    echo "$(date) - Added product: $product_name, $sku, $quantity, $price" >> "$LOG_FILE"
+    echo "$(date) - Added product: $product_name, $quantity, $price" >> "$LOG_FILE"
 }
 
 function delete_product {
@@ -45,13 +45,12 @@ function update_product {
 
     # Check if the product exists
     if grep -q "^$product_name," "$INVENTORY_FILE"; then
-        read -p "Enter the new SKU: " sku
         read -p "Enter the new quantity: " quantity
         read -p "Enter the new price: " price
-        sed -i "s/^$product_name,.*/$product_name,$sku,$quantity,$price/" "$INVENTORY_FILE"
-        echo "Product updated: $product_name, $sku, $quantity, $price"
+        sed -i "s/^$product_name,.*/$product_name,$quantity,$price/" "$INVENTORY_FILE"
+        echo "Product updated: $product_name, $quantity, $price"
         # Log the operation
-        echo "$(date) - Updated product: $product_name, $sku, $quantity, $price" >> "$LOG_FILE"
+        echo "$(date) - Updated product: $product_name, $quantity, $price" >> "$LOG_FILE"
     else
         # Product doesn't exist
         echo "Product not found: $product_name"
