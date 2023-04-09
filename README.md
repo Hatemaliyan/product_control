@@ -2,7 +2,7 @@
 This Bash script is an inventory management system that allows the user to add, delete, update, or find products in an inventory file.
 
 # Usage
-To use the script, follow the steps below:
+**To use the script, follow the steps below:
 
 1- Save the script with a name and extension .sh.
 
@@ -23,7 +23,7 @@ Note: Replace scriptname.sh with the actual name of the script and inventoryfile
 8- To view the log of operations performed, open the log.txt file in the same directory as the script.
 
 # Features
-The script offers the following features:
+**The script offers the following features:
 
 Add a new product to the inventory file.
 
