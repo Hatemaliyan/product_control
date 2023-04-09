@@ -26,8 +26,11 @@ Note: Replace scriptname.sh with the actual name of the script and inventoryfile
 The script offers the following features:
 
 Add a new product to the inventory file.
+
 Delete a product from the inventory file.
+
 Update an existing product in the inventory file.
+
 Find a product in the inventory file.
 
 # Dependencies
