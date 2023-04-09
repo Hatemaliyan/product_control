@@ -5,13 +5,21 @@ This Bash script is an inventory management system that allows the user to add, 
 To use the script, follow the steps below:
 
 1- Save the script with a name and extension .sh.
+
 2- Open a terminal or command prompt and navigate to the directory where the script is saved.
+
 3- Run the script by typing ./product_control.sh inventoryfile.txt and press enter.
+
 Note: Replace scriptname.sh with the actual name of the script and inventoryfile.txt with the name of your inventory file.
+
 4-The script will display a welcome message and a menu with options to add, delete, update or find a product.
+
 5- Choose an option by typing the corresponding number and press enter.
+
 6- Follow the prompts and enter the necessary information to perform the chosen operation.
+
 7- Repeat steps 5 and 6 until you choose the "Exit" option.
+
 8- To view the log of operations performed, open the log.txt file in the same directory as the script.
 
 # Features
